@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    title perk - somoslabs
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic')
+    link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/toolkit-inverse.css')
+    link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/application.css')
+  body
+    .with-iconav
+      nav.iconav
+        a.iconav-brand(href='/')
+          span.icon.icon-leaf.iconav-brand-icon
+        .iconav-slider
+          ul.nav.nav-pills.iconav-nav
+            li.active
+              a(href='/', title='Overview', data-toggle='tooltip', data-placement='right', data-container='body')
+                span.icon.icon-home
+                small.iconav-nav-label.visible-xs-block Overview
+            li
+              a(href='/perks', title='Perks', data-toggle='tooltip', data-placement='right', data-container='body')
+                span.icon.icon-trophy
+                small.iconav-nav-label.visible-xs-block Perks
+            li
+              a(href='/jobs', title='Jobs', data-toggle='tooltip', data-placement='right', data-container='body')
+                span.icon.icon-briefcase
+                small.iconav-nav-label.visible-xs-block Jobs
+            li
+              a(href='/partners', title='Partners', data-toggle='tooltip', data-placement='right', data-container='body')
+                span.icon.icon-heart
+                small.iconav-nav-label.visible-xs-block Partners
+            li
+              a(href='/user', title='Signed in as josebet1', data-toggle='tooltip', data-placement='right', data-container='body')
+                img.img-circle.img-responsive(src='https://s.gravatar.com/avatar/84f4c28f9a62bb855669374bef2cd48c?s=600', alt='')
+                small.iconav-nav-label.visible-xs-block @josebet1
+    .container
+      block content
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', integrity='sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7', crossorigin='anonymous')
+  script(src='https://perk.somoslabs.com/static/js/chart.js')
+  script(src='https://perk.somoslabs.com/static/js/tablesorter.min.js')
+  script(src='https://perk.somoslabs.com/static/js/toolkit.js')
+  script(src='https://perk.somoslabs.com/static/js/application.js')
