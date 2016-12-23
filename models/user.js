@@ -6,13 +6,13 @@ const UserSchema = new Schema({
   last: String,
   email: String,
   phone: String,
+  image: String,
   hasJob: Boolean,
   resume: { type: Schema.ObjectId, ref: 'Resume' },
   auth: [{
     provider: String,
     id: String,
     oauth_token: String,
-    oauth_expiration: Date,
     last_login: Date,
   }],
   perks: [{

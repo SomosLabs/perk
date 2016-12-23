@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const User = require('./models/user.js').User;
 
 const app = express();
 
@@ -24,7 +25,29 @@ passport.use(new GoogleStrategy({
   clientSecret: googleCientSecret,
   callbackURL: googleCBURL,
 }, (accessToken, refreshToken, profile, cb) => {
+  console.log(profile);
   return cb(null, profile);
+  User.findOne({ auth: { $elemMatch: { provider: 'google', id: profile.id } } }, (err, user) => {
+    if (!user) {
+      const newUser = new User({
+        first: profile.name.givenName,
+        last: profile.name.familyName,
+        email: profile.emails[0].value,
+        image: profile.image.url,
+        hasJob: false,
+        auth: [{
+          provider: 'google',
+          id: profile.id,
+          oauth_token: accessToken,
+          last_login: new Date(),
+        }],
+        perks: [],
+        companies: [],
+      });
+    } else {
+      return cb(null, user);
+    }
+  });
 }));
 
 passport.serializeUser((user, cb) => {
