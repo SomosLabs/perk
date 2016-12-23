@@ -31,7 +31,7 @@ passport.use(new GoogleStrategy({
         first: profile.name.givenName,
         last: profile.name.familyName,
         email: profile.emails[0].value,
-        image: profile.image.url,
+        image: profile.photos[0].value,
         hasJob: false,
         auth: [{
           provider: 'google',
