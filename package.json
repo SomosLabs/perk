@@ -1,0 +1,33 @@
+{
+  "name": "perk",
+  "version": "0.0.1",
+  "description": "perk delivery service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josebet1/perk.git"
+  },
+  "author": "Jose Bethancourt <jose@joseb.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josebet1/perk/issues"
+  },
+  "homepage": "https://github.com/josebet1/perk#readme",
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.4",
+    "passport": "^0.3.2"
+  }
+}
