@@ -4,8 +4,8 @@ const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
 const router = express.Router();
 
-router.route('/')
-  .get((req, res) => {
+router.route('/').get(ensureLoggedIn('/login'),
+  (req, res) => {
     res.render('index', { title: 'Hey', message: 'Hello there!' });
   });
 
@@ -19,8 +19,15 @@ router.route('/auth/google').get(passport.authenticate('google', { scope: ['prof
 router.route('/auth/google/callback')
   .get(passport.authenticate('google', { failureRedirect: '/' }),
     (req, res) => {
-      res.redirect('/testing');
+      console.log(req.user);
+      res.redirect('/');
     });
+
+router.route('/testing').get(ensureLoggedIn('/login'),
+  (req, res) => {
+    console.log(req);
+    res.json({});
+  });
 
 router.route('/logout')
   .get((req, res) => {
