@@ -14,7 +14,7 @@ const googleCBURL = process.env.GOOGLE_CB_URL;
 const expressSecret = process.env.EXPRESS_SECRET;
 
 app.set('view engine', 'pug');
-// mongoose.connect('mongodb://localhost/perk');
+mongoose.connect('mongodb://localhost/perk');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,8 +25,6 @@ passport.use(new GoogleStrategy({
   clientSecret: googleCientSecret,
   callbackURL: googleCBURL,
 }, (accessToken, refreshToken, profile, cb) => {
-  console.log(profile);
-  return cb(null, profile);
   User.findOne({ auth: { $elemMatch: { provider: 'google', id: profile.id } } }, (err, user) => {
     if (!user) {
       const newUser = new User({
@@ -43,6 +41,10 @@ passport.use(new GoogleStrategy({
         }],
         perks: [],
         companies: [],
+      });
+
+      newUser.save((error, savedUser) => {
+        return cb(null, savedUser);
       });
     } else {
       return cb(null, user);
