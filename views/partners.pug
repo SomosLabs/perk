@@ -1,0 +1,26 @@
+extends layout
+block content
+
+  .dashhead
+    .dashhead-titles
+      h6.dashhead-subtitle perk
+      h3.dashhead-title Partners
+  
+  hr.m-t-0.m-b-lg
+
+  .row
+    each partner in partners
+      .col-xs-6.col-sm-3.col-md-3
+        .thumbnail
+          img(src=partner.image, width="100", alt='...')
+          .caption
+            h3= partner.name
+            p
+              .btn-group.btn-group-justified(role='group', aria-label='Justified button group')
+                a.btn.btn-primary-outline(href= partner.website, role='button')
+                  span.icon.icon-compass
+                a.btn.btn-primary-outline(href= partner.social.facebook, role='button')
+                  span.icon.icon-facebook
+                a.btn.btn-primary-outline(href= partner.social.twitter, role='button')
+                  span.icon.icon-twitter
+

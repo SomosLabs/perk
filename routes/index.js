@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/').get(ensureLoggedIn('/login'),
   (req, res) => {
-    res.render('index', { title: 'Hey', message: 'Hello there!' });
+    res.render('index', { path: req.path, title: 'Hey', message: 'Hello there!' });
   });
 
 router.route('/login')

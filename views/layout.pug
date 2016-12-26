@@ -5,6 +5,7 @@ html(lang='en')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic')
     link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/toolkit-inverse.css')
     link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/application.css')
+    link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/override.css')
   body
     .with-iconav
       nav.iconav
@@ -12,7 +13,7 @@ html(lang='en')
           span.icon.icon-leaf.iconav-brand-icon
         .iconav-slider
           ul.nav.nav-pills.iconav-nav
-            li.active
+            li(class=path=='/'?'active':undefined)
               a(href='/', title='Overview', data-toggle='tooltip', data-placement='right', data-container='body')
                 span.icon.icon-home
                 small.iconav-nav-label.visible-xs-block Overview
@@ -24,11 +25,11 @@ html(lang='en')
               a(href='/jobs', title='Jobs', data-toggle='tooltip', data-placement='right', data-container='body')
                 span.icon.icon-briefcase
                 small.iconav-nav-label.visible-xs-block Jobs
-            li
+            li(class=path=='/partners'?'active':undefined)
               a(href='/partners', title='Partners', data-toggle='tooltip', data-placement='right', data-container='body')
                 span.icon.icon-heart
                 small.iconav-nav-label.visible-xs-block Partners
-            li
+            li(class=path=='/user'?'active':undefined)
               a(href='/user', title='Signed in as josebet1', data-toggle='tooltip', data-placement='right', data-container='body')
                 img.img-circle.img-responsive(src='https://s.gravatar.com/avatar/84f4c28f9a62bb855669374bef2cd48c?s=600', alt='')
                 small.iconav-nav-label.visible-xs-block @josebet1

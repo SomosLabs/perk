@@ -64,6 +64,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(require('./routes/index.js'));
+app.use(require('./routes/partners.js'));
 // app.use(require('./routes/user.js'));
 
 module.exports = app;
