@@ -7,7 +7,6 @@ const router = express.Router();
 router.route('/partners').get(ensureLoggedIn('/login'),
   (req, res) => {
     Partner.find({}, (err, partners) => {
-      console.log(partners)
       res.render('partners', { path: req.path, partners });
     });
   });
