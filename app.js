@@ -65,7 +65,7 @@ app.use(passport.session());
 
 app.use(require('./routes/index.js'));
 app.use(require('./routes/partners.js'));
-// app.use(require('./routes/user.js'));
+app.use(require('./routes/perks.js'));
 
 module.exports = app;
 console.log('Perk is perking.');

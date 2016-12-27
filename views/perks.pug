@@ -1,0 +1,46 @@
+extends layout
+block content
+
+  .dashhead
+    .dashhead-titles
+      h6.dashhead-subtitle perk
+      h3.dashhead-title Perks
+
+  .hr-divider
+    h3.hr-divider-content.hr-divider-heading= `${user.first}'s Perks`
+
+  br
+
+  .alert.alert-info(role='alert')= `Hi ${user.first}! Congratulations on your graduation of the (boot) program. Below you can find some of the perks provided by Somos Labs' partners.`
+
+  .row
+    each perk in perks
+      .col-xs-6.col-sm-6.col-md-4.col-lg-4
+        .box
+          .box-icon
+          .info
+            h4.text-center= perk.title
+            p= perk.description
+            a.btn.getButton(perk-id=perk._id)= perk.view.button
+
+
+  //- // Button trigger modal
+  //- button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+  //-   | Launch demo modal
+  //- // Modal
+  //- #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+  //-   .modal-dialog(role='document')
+  //-     .modal-content
+  //-       .modal-header
+  //-         button.close(type='button', data-dismiss='modal', aria-label='Close')
+  //-           span(aria-hidden='true') ×
+  //-         h4#myModalLabel.modal-title Modal title
+  //-       .modal-body
+  //-         | ...
+  //-       .modal-footer
+  //-         button.btn.btn-default(type='button', data-dismiss='modal') Close
+  //-         button.btn.btn-primary(type='button') Save changes
+
+
+
+
