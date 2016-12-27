@@ -2,14 +2,19 @@ doctype html
 html(lang='en')
   head
     title perk - somoslabs
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic')
     link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/toolkit-inverse.css')
     link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/application.css')
+    link(rel='stylesheet' href='https://perk.somoslabs.com/static/css/override.css')
+      
   body
     .with-iconav
       nav.iconav
         a.iconav-brand(href='/')
-          span.icon.icon-leaf.iconav-brand-icon
+          img.logo-icon(src='https://avatars3.githubusercontent.com/u/22484779' height='50')
     .container
       .well
         p.lead.text-center perk by somoslabs
