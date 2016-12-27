@@ -23,32 +23,17 @@ block content
             p= perk.description
             a.btn.getButton(perk-id=perk._id)= perk.view.button
 
-
-  //- // Modal
-  //- #signupModal.modal.fade.hide(tabindex='-1', role='dialog', aria-labelledby='signupModalLabel', aria-hidden="true")
-  //-   .modal-dialog(role='document')
-  //-     .modal-content
-  //-       .modal-header
-  //-         button.close(type='button', data-dismiss='modal', aria-label='Close')
-  //-           span(aria-hidden='true') ×
-  //-         h4#myModalLabel.modal-title Modal title
-  //-       .modal-body
-  //-         | ...
-  //-       .modal-footer
-  //-         button.btn.btn-default(type='button', data-dismiss='modal') Close
-  //-         button.btn.btn-primary(type='button') Save changes
-
   #signupModal.modal.fade
     .modal-dialog.modal-md
       .modal-content
         .modal-header
           button.close(type='button', data-dismiss='modal', aria-label='Close')
             span(aria-hidden='true') ×
-          h4.modal-title= `How to get: `
-        p.modal-body= "The body"
+          h4.modal-title= ''
+        p.modal-body= ''
         .modal-actions
           button.btn-link.modal-action(type='button', data-dismiss='modal') Cancel
-          a.btn.btn-link.modal-action(type='button', data-dismiss='modal' href='')
+          a.btn.btn-link.modal-action.model-positive(type='button', data-dismiss='modal' href='')
             strong Continue
 
 
